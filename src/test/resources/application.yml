@@ -1,0 +1,2 @@
+client:
+  url: http://localhost:${wiremock.server.port}/v2

@@ -13,12 +13,14 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@ContextConfiguration(classes = {
-    RestClient.class
-},
+@ContextConfiguration(
+    classes = {
+        RestClient.class
+    },
     initializers = {
-        ConfigDataApplicationContextInitializer.class,
-    })
+        ConfigDataApplicationContextInitializer.class
+    }
+)
 @ExtendWith(SpringExtension.class)
 @TestPropertySource("/application.properties")
 @EnableConfigurationProperties(value = {
