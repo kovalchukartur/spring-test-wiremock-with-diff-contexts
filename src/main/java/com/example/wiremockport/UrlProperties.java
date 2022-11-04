@@ -1,5 +1,6 @@
 package com.example.wiremockport;
 
+import java.net.URI;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
@@ -7,13 +8,13 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties("client")
 public class UrlProperties {
 
-    private String url;
+    private URI uri;
 
-    public String getUrl() {
-        return url;
+    public URI getUri() {
+        return uri;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setUri(URI uri) {
+        this.uri = uri;
     }
 }

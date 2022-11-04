@@ -19,7 +19,7 @@ class RestClientTest {
 
     @Test
     void whenGetResourceIsSuccess() {
-        String result = restClient.getResource(urlProperties.getUrl());
+        String result = restClient.getResource(urlProperties.getUri());
 
         assertNotNull(result);
         assertEquals("test", result);

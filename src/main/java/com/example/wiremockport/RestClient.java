@@ -1,5 +1,7 @@
 package com.example.wiremockport;
 
+import java.net.URI;
+import java.net.URL;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -12,7 +14,7 @@ public class RestClient {
         this.restTemplate = new RestTemplate();
     }
 
-    public String getResource(String url) {
-        return restTemplate.getForObject(url, String.class);
+    public String getResource(URI uri) {
+        return restTemplate.getForObject(uri, String.class);
     }
 }

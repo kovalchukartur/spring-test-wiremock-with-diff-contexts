@@ -3,4 +3,4 @@ wiremock:
     port: 0
 
 client:
-  url: http://localhost:${wiremock.server.port}/v2
+  uri: http://localhost:${wiremock.server.port}/v2
