@@ -8,7 +8,7 @@ import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-@AutoConfigureWireMock(port = 0, stubs = "classpath:/stubs")
+@AutoConfigureWireMock
 class RestClientTest {
 
     @Autowired

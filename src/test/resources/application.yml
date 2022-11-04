@@ -1,2 +1,8 @@
+wiremock:
+  server:
+    port: 0
+    stubs:
+      - "classpath:/stubs"
+
 client:
   url: http://localhost:${wiremock.server.port}/v2
