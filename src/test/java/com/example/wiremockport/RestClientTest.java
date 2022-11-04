@@ -12,14 +12,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class RestClientTest {
 
     @Autowired
-    private UrlProperties urlProperties;
+    private UriProperties uriProperties;
 
     @Autowired
     private RestClient restClient;
 
     @Test
     void whenGetResourceIsSuccess() {
-        String result = restClient.getResource(urlProperties.getUri());
+        String result = restClient.getResource(uriProperties.getUri());
 
         assertNotNull(result);
         assertEquals("test", result);

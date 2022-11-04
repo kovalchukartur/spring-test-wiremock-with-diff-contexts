@@ -30,7 +30,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @ExtendWith(SpringExtension.class)
 @TestPropertySource("/application.properties")
 @EnableConfigurationProperties(value = {
-    UrlProperties.class
+    UriProperties.class
 })
 @AutoConfigureWireMock
 @PropertyMapping(value = "wiremock.server", skip = SkipPropertyMapping.NO)
@@ -39,24 +39,24 @@ class RestClientUnitTest {
     @Autowired
     private WireMockServer wireMockServer;
     @Autowired
-    private UrlProperties urlProperties;
+    private UriProperties uriProperties;
     @Autowired
     private RestClient restClient;
 
     @BeforeEach
     public void setUp() {
         int port = wireMockServer.port();
-        URI uri = UriComponentsBuilder.fromUri(urlProperties.getUri())
+        URI uri = UriComponentsBuilder.fromUri(uriProperties.getUri())
             .port(port)
             .build()
             .toUri();
 
-        urlProperties.setUri(uri);
+        uriProperties.setUri(uri);
     }
 
     @Test
     void whenGetResourceIsSuccess() {
-        String result = restClient.getResource(urlProperties.getUri());
+        String result = restClient.getResource(uriProperties.getUri());
 
         assertNotNull(result);
         assertEquals("test", result);

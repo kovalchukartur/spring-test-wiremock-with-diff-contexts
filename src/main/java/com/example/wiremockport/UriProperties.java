@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ConfigurationProperties("client")
-public class UrlProperties {
+public class UriProperties {
 
     private URI uri;
 
