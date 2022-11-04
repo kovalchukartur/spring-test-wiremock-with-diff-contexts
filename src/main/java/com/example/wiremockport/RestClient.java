@@ -12,7 +12,7 @@ public class RestClient {
         this.restTemplate = new RestTemplate();
     }
 
-    public String getResource() {
-        return restTemplate.getForObject("https://spring.io/blog.atom", String.class);
+    public String getResource(String url) {
+        return restTemplate.getForObject(url, String.class);
     }
 }
